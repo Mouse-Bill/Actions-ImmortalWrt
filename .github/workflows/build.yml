@@ -140,3 +140,9 @@ jobs:
         with:
           name: ImmortalWrt-build-result
           path: ImmortalWrt/bin/targets
+          
+      - name: 上传编译配置到 Artifact (Upload build result to Artifact)
+        uses: actions/upload-artifact@v4
+        with:
+          name: ImmortalWrt-build-config
+          path: ImmortalWrt/.config
