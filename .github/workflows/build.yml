@@ -72,9 +72,13 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: config-before-build
-          path: |
-            ImmortalWrt/feeds.conf.default
-            ImmortalWrt/.config
+          path: ImmortalWrt/.config
+
+      - name: 编译前上传Feeds (Upload feeds before build)
+        uses: actions/upload-artifact@v4
+        with:
+          name: feeds-before-build
+          path: ImmortalWrt/feeds.conf.default
 
       - name: 多线程编译 ImmortalWrt (Build ImmortalWrt multithreading)
         if: ${{inputs.multithreading == true}}
