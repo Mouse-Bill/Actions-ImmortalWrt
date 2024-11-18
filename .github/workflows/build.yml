@@ -115,7 +115,7 @@ jobs:
       - name: 开启 SSH 服务 (Start SSH service)
         uses: lhotari/action-upterm@v1
         with:
-          wait-timeout-minutes: 1
+          wait-timeout-minutes: 3
 
       - name: 编译前上传配置 (Upload config before build)
         uses: actions/upload-artifact@v4
