@@ -115,15 +115,19 @@ jobs:
       - name: 开启 SSH 服务 (Start SSH service)
         uses: lhotari/action-upterm@v1
         with:
-          wait-timeout-minutes: 20
+          wait-timeout-minutes: 1
 
       - name: 编译前上传配置 (Upload config before build)
         uses: actions/upload-artifact@v4
         with:
           name: config-before-build
-          path: |
-            ImmortalWrt/feeds.conf.default
-            ImmortalWrt/.config
+          path: ImmortalWrt/.config
+
+      - name: 编译前上传Feeds (Upload feeds before build)
+        uses: actions/upload-artifact@v4
+        with:
+          name: feeds-before-build
+          path: ImmortalWrt/feeds.conf.default
 
       - name: 多线程编译 ImmortalWrt (Build ImmortalWrt multithreading)
         if: ${{inputs.multithreading == true}}
@@ -141,7 +145,7 @@ jobs:
           name: ImmortalWrt-build-result
           path: ImmortalWrt/bin/targets
           
-      - name: 上传编译配置到 Artifact (Upload build result to Artifact)
+      - name: 编译后上传配置到 Artifact (Upload build config to Artifact)
         uses: actions/upload-artifact@v4
         with:
           name: ImmortalWrt-build-config
