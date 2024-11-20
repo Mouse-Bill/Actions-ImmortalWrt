@@ -12,6 +12,6 @@ git clone https://github.com/Mouse-Bill/immortalwrt-upx feeds/packages/utils/upx
 
 #wget https://github.com/coolsnowwolf/lede/raw/44ac9994feddd71e541cbad4683faa41024c771d/package/lean/upx/Makefile -O feeds/packages/utils/upx/Makefile 
 
-#sed -i '/^PKG_BUILD_DEPENDS:=/ !b; /upx\/host/ b; s/$/ upx\/host/' ./feeds/smpackage/speedtest-web/Makefile 
+sed -i '/^PKG_BUILD_DEPENDS:=/ !b; /upx\/host/ b; s/$/ upx\/host/' ./feeds/smpackage/speedtest-web/Makefile 
 #sed -i 's#\$(STAGING_DIR_HOST)/bin/upx#\$(STAGING_DIR_HOST)/hostpkg/bin/upx#' ./feeds/smpackage/speedtest-web/Makefile 
 #sed -i 's#\$(STAGING_DIR_HOST)/bin/upx#upx#' ./feeds/smpackage/speedtest-web/Makefile 
