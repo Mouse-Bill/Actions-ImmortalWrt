@@ -15,3 +15,5 @@ git clone https://github.com/Mouse-Bill/immortalwrt-upx feeds/packages/utils/upx
 sed -i '/^PKG_BUILD_DEPENDS:=/ !b; /upx\/host/ b; s/$/ upx\/host/' ./feeds/smpackage/speedtest-web/Makefile 
 #sed -i 's#\$(STAGING_DIR_HOST)/bin/upx#\$(STAGING_DIR_HOST)/hostpkg/bin/upx#' ./feeds/smpackage/speedtest-web/Makefile 
 #sed -i 's#\$(STAGING_DIR_HOST)/bin/upx#upx#' ./feeds/smpackage/speedtest-web/Makefile 
+
+sed -i 's/192.168.1.1/192.168.6.1/g' package/base-files/files/bin/config_generate
