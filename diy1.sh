@@ -7,5 +7,5 @@
 rm -rf feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
 
-rm -rf feeds/packages/utils/upx
-git clone https://github.com/Mouse-Bill/immortalwrt-upx feeds/packages/utils/upx
+#rm -rf feeds/packages/utils/upx
+#git clone https://github.com/Mouse-Bill/immortalwrt-upx feeds/packages/utils/upx
