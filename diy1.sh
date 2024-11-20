@@ -7,6 +7,9 @@
 rm -rf feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
 
+rm -rf feeds/packages/utils/upx
+git clone https://github.com/Mouse-Bill/immortalwrt-upx feeds/packages/utils/upx
+
 #wget https://github.com/coolsnowwolf/lede/raw/44ac9994feddd71e541cbad4683faa41024c771d/package/lean/upx/Makefile -O feeds/packages/utils/upx/Makefile 
 
 #sed -i '/^PKG_BUILD_DEPENDS:=/ !b; /upx\/host/ b; s/$/ upx\/host/' ./feeds/smpackage/speedtest-web/Makefile 
