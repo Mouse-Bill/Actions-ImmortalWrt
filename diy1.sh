@@ -7,6 +7,8 @@
 rm -rf feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang -b 23.x feeds/packages/lang/golang
 
-sed -i '/^PKG_BUILD_DEPENDS:=/ !b; /upx\/host/ b; s/$/ upx\/host/' ./feeds/smpackage/speedtest-web/Makefile 
+wget https://github.com/coolsnowwolf/lede/raw/44ac9994feddd71e541cbad4683faa41024c771d/package/lean/upx/Makefile -O feeds/packages/utils/upx/Makefile 
+
+#sed -i '/^PKG_BUILD_DEPENDS:=/ !b; /upx\/host/ b; s/$/ upx\/host/' ./feeds/smpackage/speedtest-web/Makefile 
 #sed -i 's#\$(STAGING_DIR_HOST)/bin/upx#\$(STAGING_DIR_HOST)/hostpkg/bin/upx#' ./feeds/smpackage/speedtest-web/Makefile 
-sed -i 's#\$(STAGING_DIR_HOST)/bin/upx#upx#' ./feeds/smpackage/speedtest-web/Makefile 
+#sed -i 's#\$(STAGING_DIR_HOST)/bin/upx#upx#' ./feeds/smpackage/speedtest-web/Makefile 
